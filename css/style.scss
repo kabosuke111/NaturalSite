@@ -1,0 +1,316 @@
+/* Scss Document */
+@charset "utf-8";
+@font-face {
+    font-family: "Round";
+    src: url("../fonts/MPLUSRounded1c-Light.ttf");
+}
+
+$main_color: #bee861;
+$main_font: "Round";
+
+@mixin FLEX($jtype:center, $wtype:wrap, $dtype:flex) {
+    justify-content: $jtype;
+    flex-wrap: $wtype;
+    display: $dtype;
+}
+
+@mixin WHDM($Bwidth:auto, $Bheight:auto, $BMXWidth: none, $BMXHeight:none, $Bdisp:block, $Bmargin: 0 auto) {
+    width: $Bwidth;
+    height: $Bheight;
+    max-width: $BMXWidth;
+    max-height: $BMXHeight;
+    display: $Bdisp;
+    margin: $Bmargin;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font: {
+        size: 1.4rem;
+        family: "Round";
+    }
+}
+
+li {
+    list-style: none;
+}
+
+#wrapper {
+    position: relative;
+}
+
+
+/*------------------------------------------------------------------
+
+                            サイトヘッダ
+
+------------------------------------------------------------------*/
+#header {
+    box-shadow: 1px 1px 3px 1px #777;
+    padding-top: 25px;
+}
+
+.site__title {
+    font-weight: 200;
+    font-size: 3.8rem;
+    letter-spacing: 7px;
+    padding: 0 0 27px 20px;
+}
+
+.site__search {
+    position: absolute;
+    top: 31px;
+    right: 20px;
+    
+    input[type="search"] {
+        border: solid 1px $main_color;
+        outline: none;
+    }
+    
+    input[type="submit"] {
+        background: $main_color;
+        border: solid 1px $main_color;
+        color: #Fff;
+        position: relative;
+        padding: 0 5px;
+        left: -5px;
+    }
+    
+    li:not(:first-of-type) {
+        font-size: 1rem;
+        display: inline-block;
+    }
+    
+    li {
+        list-style: none;
+        
+        a {
+            text-decoration: none;
+            color: #000;
+            display: inline-block;
+            vertical-align: middle;
+            
+            &::before {
+                content: "";
+                display: inline-block;
+                border-top: solid 7px transparent;
+                border-bottom: solid 7px transparent;
+                border-left: solid 7px $main_color;
+                border-right: solid 0px transparent;
+                width: 9px;
+                height: 10px;
+            }
+        }
+        
+        &:nth-of-type(3) {
+            margin-left: 40px;
+        }
+    }
+}
+
+.site__nav {
+    border-top: solid 1px #777;
+    padding: 15px 0;
+    
+    .site__ul {
+        display: flex;
+        flex-wrap: nowrap;
+        @include FLEX(space-between);
+        width: 100%;
+        max-width: 637px;
+        margin: 0 auto;
+        
+        li {
+            width: 75px;
+            text-align: center;
+            list-style: none;
+            
+            &:nth-of-type(2n) a {
+                border-color: #ff9a5c;
+            }
+            
+        }
+        
+        .site__link {
+            display: block;
+            font-size: 1.7rem;
+            color: #777;
+            text-decoration: none;
+            border-bottom: solid 4px #f2dc66;
+            padding: 0 0 11px;
+            line-height: 1;
+        }
+        
+    }
+}
+
+/*------------------------------------------------------------------
+
+                            ↓メイン
+
+------------------------------------------------------------------*/
+#main {
+    @include WHDM(100%, auto, 1000px);
+}
+
+.contents-title {
+    font-size: 3.8rem;
+    text-align: center;
+    letter-spacing: 7px;
+    margin: 100px auto 38px;
+    padding: 17px 0;
+    border-top: solid 1px #000;
+    border-bottom: solid 1px #000;
+
+    span {
+        display: block;
+        font-size: 1.2rem;
+    }
+}
+    
+/*------------------------------------------------------------------
+
+                            サイトトップ
+
+------------------------------------------------------------------*/
+#site__top {
+    .contents-title {
+        border: none;
+        padding: 86px 0 28px;
+        margin: 0;
+    }
+
+    .top__topImage {
+        @include WHDM(100%, auto, 1000px);
+
+        img {
+            width: 100%;
+        }
+    }
+}
+    
+/*------------------------------------------------------------------
+
+                            更新情報
+
+------------------------------------------------------------------*/
+
+
+#site__update {
+    .update__contents {
+        @include WHDM(100%, auto, 800px);
+        white-space: nowrap;
+        overflow: scroll;
+        
+        a {
+            color: #000;
+        }
+    }
+    
+    .update__title,time,p {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 30px;
+    }
+
+    .update__list {
+        letter-spacing: 3px;
+        margin-bottom: 25px;
+        
+        .update__title {
+            background: $main_color;
+            color: #fff;
+            width: 105px;
+            height: 21px;
+            text-align: center;
+            position: relative;
+            margin-right: 37px;
+
+            &::after {
+                content: "";
+                @include WHDM(15px, 15px);
+                background: $main_color;
+                transform: rotate(45deg);
+                position: absolute;
+                top: 3px;
+                right: -7px;                
+            }
+        }
+        
+        time {
+            
+        }
+        
+        p {
+            border-bottom: dotted 1px #000;
+        }
+    }
+
+}
+/*------------------------------------------------------------------
+
+                            会社情報
+
+------------------------------------------------------------------*/
+#site__infomation {
+    
+    
+    
+
+}
+/*------------------------------------------------------------------
+
+                            製品紹介
+
+------------------------------------------------------------------*/
+#site__product {
+
+
+}
+/*------------------------------------------------------------------
+
+                            導入事例
+
+------------------------------------------------------------------*/
+#site__example {
+    
+}
+/*------------------------------------------------------------------
+
+                            採用情報
+
+------------------------------------------------------------------*/
+.site__recruit {
+    
+}
+/*------------------------------------------------------------------
+
+                            フッター
+
+------------------------------------------------------------------*/
+#footer {
+    
+}
+
+/*------------------------------------------------------------------
+
+                            その他のパーツ
+
+------------------------------------------------------------------*/
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
