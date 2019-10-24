@@ -5,6 +5,11 @@
     src: url("../fonts/MPLUSRounded1c-Light.ttf");
 }
 
+@font-face {
+    font-family: "WakuWaku";
+    src: url("../fonts/mini-wakuwaku.otf");
+}
+
 $main_color: #bee861;
 $main_font: "Round";
 
@@ -161,9 +166,6 @@ li {
                             ↓メイン
 
 ------------------------------------------------------------------*/
-#main {
-    @include WHDM(100%, auto, 1000px);
-}
 
 .contents-title {
     font-size: 3.8rem;
@@ -264,11 +266,70 @@ li {
                             会社情報
 
 ------------------------------------------------------------------*/
-#site__infomation {
+#site__information {
     
-    
-    
-
+    .info__contents {
+        margin: 70px auto;
+        
+        @include FLEX();
+        
+        & > a {
+            padding: 20px 20px 0;
+            display: block;
+            text-decoration: none;
+            background: #fff;
+            color: #000;
+            box-shadow: 1px 1px 3px 1px #777;
+            position: relative;
+            
+            :hover {
+                transition: 0.3s ease-in;
+            }
+            margin: 20px 38px;
+            transform: rotate(7deg);
+        }
+        
+        .info__items {
+            
+            h4 {
+                font-size: 3.0rem;
+                letter-spacing: 5px;
+                margin: 20px 0 30px;
+                position: relative;
+                z-index: 1;
+                
+                span {
+                    font: {
+                        size: 2.7rem;
+                        family: "WakuWaku";
+                    }
+                    color: #fce0c5;
+                    position: absolute;
+                    top: 20px;
+                    left: 20px;
+                    z-index: -1;
+                }
+            }
+            
+            img {
+                
+                width: 100%;
+                max-width: 268px;
+            }
+            
+            &::after {
+                content: "";
+                display: block;
+                width: 100px;
+                height: 40px;
+                background: $main_color;
+                position: absolute;
+                top: -4px;
+                left: -32px;
+                transform: rotate(-45deg);
+            }
+        }
+    }
 }
 /*------------------------------------------------------------------
 
