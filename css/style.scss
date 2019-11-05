@@ -337,8 +337,41 @@ li {
 
 ------------------------------------------------------------------*/
 #site__product {
-
-
+    
+    .product__box--type {
+        
+        .section-title {
+            margin: 15px;
+            letter-spacing: 5px;
+            text-align: center;
+            
+            &:after {
+                content: "";
+                display: block;
+                width: 45px;
+                border: {
+                    top: 11px solid $main_color;
+                    bottom: 2px solid transparent;
+                    left: 25px solid transparent;
+                    right: 25px solid transparent;
+                }
+                margin: 8px auto 0;
+            }
+        }
+    }
+    
+    .product__contents {
+        
+        h4 {
+            
+            &::before {
+                content: "";
+                display: block;
+                width: 187px;
+                height: 187px;
+            }
+        }
+    }
 }
 /*------------------------------------------------------------------
 

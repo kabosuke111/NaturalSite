@@ -242,6 +242,20 @@ li {
                             製品紹介
 
 ------------------------------------------------------------------*/
+#site__product .product__box--type .section-title {
+  margin: 15px;
+  letter-spacing: 5px;
+  text-align: center; }
+  #site__product .product__box--type .section-title:after {
+    content: "";
+    display: block;
+    width: 45px;
+    border-top: 11px solid #bee861;
+    border-bottom: 2px solid transparent;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    margin: 8px auto 0; }
+
 /*------------------------------------------------------------------
 
                             導入事例
